@@ -1,0 +1,203 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
+html {
+  font-size: 62.5%;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Roboto", sans-serif;
+}
+
+@keyframes appear {
+  0% {
+    top: 0;
+    transform-origin: 5rem 0;
+  }
+  100% {
+    top: -25rem;
+    transform-origin: 5rem 25rem;
+  }
+}
+@keyframes menu-rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(359deg);
+  }
+}
+@keyframes scaling {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+.orbital-menu {
+  position: relative;
+}
+.orbital-menu__list {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  animation: menu-rotation linear 60s infinite;
+}
+.orbital-menu__list:hover {
+  animation-play-state: paused;
+}
+.orbital-menu__list:hover .orbital-menu__link > * {
+  animation-play-state: paused;
+}
+.orbital-menu__item {
+  position: absolute;
+  animation: appear 2s forwards;
+  left: -5rem;
+  top: 0;
+  transform-origin: 5rem 0;
+}
+.orbital-menu__item:nth-child(2) {
+  animation-delay: 0.1s;
+  transform: rotate(45deg);
+}
+.orbital-menu__item:nth-child(2) .orbital-menu__link {
+  transform: rotate(-45deg);
+}
+.orbital-menu__item:nth-child(2) .orbital-menu__link:before {
+  background: #ffd24d;
+  animation-delay: 0.33s;
+}
+.orbital-menu__item:nth-child(3) {
+  animation-delay: 0.2s;
+  transform: rotate(90deg);
+}
+.orbital-menu__item:nth-child(3) .orbital-menu__link {
+  transform: rotate(-90deg);
+}
+.orbital-menu__item:nth-child(3) .orbital-menu__link:before {
+  background: #a6ff4d;
+  animation-delay: 0.66s;
+}
+.orbital-menu__item:nth-child(4) {
+  animation-delay: 0.3s;
+  transform: rotate(135deg);
+}
+.orbital-menu__item:nth-child(4) .orbital-menu__link {
+  transform: rotate(-135deg);
+}
+.orbital-menu__item:nth-child(4) .orbital-menu__link:before {
+  background: #4dff79;
+  animation-delay: 0.99s;
+}
+.orbital-menu__item:nth-child(5) {
+  animation-delay: 0.4s;
+  transform: rotate(180deg);
+}
+.orbital-menu__item:nth-child(5) .orbital-menu__link {
+  transform: rotate(-180deg);
+}
+.orbital-menu__item:nth-child(5) .orbital-menu__link:before {
+  background: #4dffff;
+  animation-delay: 1.32s;
+}
+.orbital-menu__item:nth-child(6) {
+  animation-delay: 0.5s;
+  transform: rotate(225deg);
+}
+.orbital-menu__item:nth-child(6) .orbital-menu__link {
+  transform: rotate(-225deg);
+}
+.orbital-menu__item:nth-child(6) .orbital-menu__link:before {
+  background: #4d79ff;
+  animation-delay: 1.65s;
+}
+.orbital-menu__item:nth-child(7) {
+  animation-delay: 0.6s;
+  transform: rotate(270deg);
+}
+.orbital-menu__item:nth-child(7) .orbital-menu__link {
+  transform: rotate(-270deg);
+}
+.orbital-menu__item:nth-child(7) .orbital-menu__link:before {
+  background: #a64dff;
+  animation-delay: 1.98s;
+}
+.orbital-menu__item:nth-child(8) {
+  animation-delay: 0.7s;
+  transform: rotate(315deg);
+}
+.orbital-menu__item:nth-child(8) .orbital-menu__link {
+  transform: rotate(-315deg);
+}
+.orbital-menu__item:nth-child(8) .orbital-menu__link:before {
+  background: #ff4dd2;
+  animation-delay: 2.31s;
+}
+.orbital-menu__link {
+  position: relative;
+  display: block;
+  height: 10rem;
+  width: 10rem;
+}
+.orbital-menu__link:before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: #ff4d4d;
+  border-radius: 50%;
+  animation: scaling linear 3s infinite;
+}
+.orbital-menu__link > * {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: menu-rotation linear 60s infinite;
+  animation-direction: reverse;
+  transition: 250ms ease all;
+}
+.orbital-menu__link-text {
+  opacity: 0;
+  text-align: center;
+  color: #fff;
+}
+.orbital-menu__link-icon {
+  color: rgba(0, 0, 0, 0.8);
+}
+.orbital-menu__link:hover:before {
+  animation-play-state: paused;
+  filter: brightness(0.7);
+}
+.orbital-menu__link:hover .orbital-menu__link-text {
+  opacity: 1;
+}
+.orbital-menu__link:hover .orbital-menu__link-icon {
+  opacity: 0;
+}
+.orbital-menu__center-pic {
+  position: relative;
+  width: 18rem;
+  height: 18rem;
+  overflow: hidden;
+  border-radius: 4rem;
+}
+.orbital-menu__center-pic > img {
+  position: absolute;
+  inset: 0;
+  max-width: 100%;
+  transition: 500ms ease all;
+}
+.orbital-menu__center-pic:hover > img:last-child {
+  opacity: 0;
+}
